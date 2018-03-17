@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Loop de animação</title>
+    <script type="text/javascript" src="animacao.js"></script>
+    <script type="text/javascript" src="bola.js"></script>
+  </head>
+  <body>
+    <canvas id="meu_canvas" width="500" height="500">
+        seu navegador não suporta essa tecnologia
+    </canvas>
+
+    <script type="text/javascript">
+        var canvas = document.getElementById("meu_canvas");
+        var contexto = canvas.getContext('2d');
+        
+        var b1 = new Bola(contexto);
+        b1.x = 100;
+        b1.y = 200;
+        b1.velocidadeX = 20;
+        b1.velocidadeY = -10;
+        b1.cor = "#f00";
+        b1.raio = 20;
+        
+        var b2 = new Bola(contexto);
+        b2.x = 100;
+        b2.y = 200;
+        b2.velocidadeX = -10;
+        b2.velocidadeY = 20;
+        b2.cor = "#00f";
+        b2.raio = 30;
+        
+        var animacao = new Animacao(contexto);
+        animacao.novoSprite(b1);
+        animacao.novoSprite(b2);
+        
+        animacao.ligar();
+        
+
+    </script>
+  </body>
+</html>
